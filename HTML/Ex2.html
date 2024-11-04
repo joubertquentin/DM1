@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<head>
+    <style>
+        /* Les styles de la calculatrice */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button,
+        input {
+            margin: 5px;
+            padding: 10px;
+        }
+
+        button:hover {
+            color: white;
+            background-color: black;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div>
+            <!-- Bouton pour effacer les paramètres insérés -->
+            <input type="text" id="afficher" style="padding-left: 0px; padding-right: 0px;" />
+            <button onclick="clearCalcul()">Effacer</button>
+        </div><br><br>
+        <!-- Bouton de 1 à 9 avec les opérateurs -->
+        <div>
+            <button onclick="afficherInsertion('1')">1</button>
+            <button onclick="afficherInsertion('2')">2</button>
+            <button onclick="afficherInsertion('3')">3</button>
+            <button onclick="afficherInsertion('+')">+</button>
+        </div><br>
+        <div>
+            <button onclick="afficherInsertion('4')">4</button>
+            <button onclick="afficherInsertion('5')">5</button>
+            <button onclick="afficherInsertion('6')">6</button>
+            <button onclick="afficherInsertion('-')">-</button>
+        </div><br>
+        <div>
+            <button onclick="afficherInsertion('7')">7</button>
+            <button onclick="afficherInsertion('8')">8</button>
+            <button onclick="afficherInsertion('9')">9</button>
+            <button onclick="afficherInsertion('/')">/</button>
+        </div><br>
+        <!-- Bouton pour calculer les paramètres insérés -->
+        <div><input type="submit" value="Entrer" style="padding-left: 63px;padding-right: 63px;"
+                onclick="calculerResultat()"></input></div>
+    </div>
+    <script>
+        // Afficher les paramètres (bouton de 1 à 9)
+        function afficherInsertion(value) {
+            const afficher = document.getElementById('afficher');
+            afficher.value += value;
+        }
+        // Calculer le résultat des paramètres insérés 
+        function calculerResultat() {
+            const afficher = document.getElementById('afficher');
+            try {
+                const resultat = eval(afficher.value);
+                alert(resultat);
+            } catch (error) {
+                alert("Le calcul est incorrect");
+            }
+        }
+        // Effacer les paramètres insérés
+        function clearCalcul() {
+            const afficher = document.getElementById('afficher');
+            afficher.value = '';
+        }
+    </script>
+</body>
+
+</html>
