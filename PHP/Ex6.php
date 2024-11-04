@@ -2,6 +2,7 @@
 /** 
  * @version PHP 8.3.7
  */
+
 // Récupérer les paramètres via la méthode post
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nom = $_POST['nom'];

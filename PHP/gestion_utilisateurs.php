@@ -2,6 +2,7 @@
 /** 
  * @version PHP 8.3.7
  */
+
 // Chemin du fichier JSON
 $fichierjson = '../JSON/utilisateurs.json';
 
