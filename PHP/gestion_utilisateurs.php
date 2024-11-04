@@ -21,7 +21,7 @@ function montrerUtilisateurs($fichierjson)
 function ajouterUtilisateurs($fichierjson, $utilisateurs)
 {
     $donnees = ['utilisateurs' => $utilisateurs];
-    file_put_contents($fichierjson, json_encode($donnees, JSON_PRETTY_PRINT));
+    file_put_contents($fichierjson, json_encode($donnees));
 }
 
 // Ajouter un utilisateur
@@ -38,11 +38,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['ajouter'])) {
 
 // Inscrire l'email de l'utilisateur pour le supprimer
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['supprimer'])) {
-    $emailASupprimer = $_POST['emailasupprimer'];
+    $emailasupprimer = $_POST['emailasupprimer'];
 
     $utilisateurs = montrerUtilisateurs($fichierjson);
-    $utilisateurs = array_filter($utilisateurs, function ($user) use ($emailASupprimer) {
-        return $user['email'] !== $emailASupprimer;
+    $utilisateurs = array_filter($utilisateurs, function ($user) use ($emailasupprimer) {
+        return $user['email'] !== $emailasupprimer;
     });
 
     ajouterUtilisateurs($fichierjson, $utilisateurs);
