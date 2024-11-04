@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo $email . "<br>";
     echo $message . "<br>";
 
-    // Si aucun un des champs n'est pas remplis, alors le echo s'affiche
+    // Si un des champs n'est pas remplis, alors le echo s'affiche
 
     if (!isset($_POST['nom']) || !isset($_POST['email']) || !isset($_POST['message'])) {
         echo "Les champs doivent être tous remplis.";
