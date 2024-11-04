@@ -3,7 +3,7 @@
  * @version PHP 8.3.7
  */
 // Chemin du fichier JSON
-$fichierjson = 'utilisateurs.json';
+$fichierjson = '../JSON/utilisateurs.json';
 
 // Montrer tous les utilsateurs contenus dans utlisateurs.json
 function montrerUtilisateurs($fichierjson)
