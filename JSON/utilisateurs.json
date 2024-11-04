@@ -9,6 +9,11 @@
             "nom": "Martin",
             "prenom": "Edouard",
             "email": "edouard.martin@gmail.com"
+        },
+        {
+            "nom": "qsd",
+            "prenom": "dazdazd",
+            "email": "test.ajout@gmail.com"
         }
     ]
 }
